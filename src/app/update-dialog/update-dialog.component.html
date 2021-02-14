@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>{{data.dialogTitle}}</h1>
+<div mat-dialog-content>
+  <div  style="width:100%;">
+    <label style="width:30%;float:left;margin-bottom: 0px"><strong>ID:</strong> </label>
+    <p  style="width:70%;float:left;margin-bottom: 0px;">{{data.dialogText.id}}</p>
+</div>
+<div  style="width:100%;margin-bottom: 40px;"><label style="width:30%;float:left;margin-bottom: 0px"><strong>Name: </strong></label>
+    <input  style="width:70%;float:left;margin-bottom: 0px;" (keypress)="btnCheck()" [(ngModel)]="newName" value={{data.dialogText.name}}>
+</div>
+<div  style="width:100%;margin-bottom: 40px;"><label style="width:30%;float:left;margin-bottom: 0px"><strong>DOB: </strong></label>
+    <p  style="width:70%;float:left;margin-bottom: 0px;">{{data.dialogText.dateOfBirth}}&nbsp;</p>
+</div>
+<div  style="width:100%;margin-bottom: 40px;"><label style="width:30%;float:left;margin-bottom: 0px"><strong>Active: </strong></label>
+    <select style="width:70%;float:left;margin-bottom: 0px;" (change) ="btnCheck()" [(ngModel)]="newStatus">
+        <option [ngValue]=true >True</option>
+        <option [ngValue]=false>False</option>
+     </select>
+    
+</div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="saveMessage()" [disabled] = isDisabled >update</button>
+  <button  style="margin-left:288px;" mat-button (click)="closeDialog()" cdkFocusInitial>Cancel</button>
+
+</div>
